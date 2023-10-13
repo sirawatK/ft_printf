@@ -6,7 +6,7 @@
 /*   By: sikulnok <sikulnok@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 16:36:20 by sikulnok          #+#    #+#             */
-/*   Updated: 2023/10/13 22:00:48 by sikulnok         ###   ########.fr       */
+/*   Updated: 2023/10/13 23:52:58 by sikulnok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,6 @@ int	print_format(char specifier, va_list *ap)
 		printed = print_ptr(va_arg(*ap, unsigned long long int));
 	else if (specifier == '%')
 		printed = write(1, "%", 1);
-	else
-		printed = print_char(specifier);
 	return (printed);
 }
 
@@ -60,12 +58,3 @@ int	ft_printf(const char *format, ...)
 	va_end(ap);
 	return (printed);
 }
-/*
-#include <stdio.h>
-#include <limits.h>
-int main(void)
-{
-	
-	ft_printf(" %p %p \n",0,0);
-	printf(" %p %p ",0,0);
-}*/
